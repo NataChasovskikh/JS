@@ -28,14 +28,7 @@ let password;
 
 let login = prompt('Введите логин');
 if (login === null) {
-   login = 1;
-   
-switch (login) {
-   case 
-}
-if (login === null) {
-   alert('Отменено пользователем!');
-   
+   alert('Отменено пользователем!');   
 }
 if (login !== adminLogin) {
    alert('Доступ запрещен, неверный логин!');
