@@ -25,20 +25,21 @@ const numbers = [];
 let total = 0;
 do {
    userInput = Number(prompt('Введите число'));
-   numbers.push(+userInput);
+   if(userInput !==0)
+   numbers.push(userInput);
+   
    console.log(numbers);
 }
-while (userInput === null);
+while (userInput);
 console.log(userInput);
 
 if (numbers.length !== total){
-   for (const items of numbers){
+  for (const items of numbers){
       total +=items;
    }
 }
-console.log('The sum is: '+ total);
+console.log(alert (`Общая сумма чисел равна ${+total}`));
 
-if (numbers.length !== total) {
-   alert (`Общая сумма чисел равна ${+total}`)
-}
+
+
 
