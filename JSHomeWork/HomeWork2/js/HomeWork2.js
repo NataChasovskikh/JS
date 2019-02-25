@@ -20,26 +20,94 @@
       в массив чисел не нужно, после чего снова пользователю предлагается ввести число в prompt.
 */
 
-let userInput;
-const numbers = []; 
-let total = 0;
+// let userInput;
+// const numbers = [];
+// let total = 0;
+// do {
+//   userInput = Number(prompt('Введите число'));
+//   if (userInput !== 0)
+//     numbers.push(userInput);
+
+//   console.log(numbers);
+// }
+// while (userInput);
+// console.log(userInput);
+
+// if (numbers.length !== total) {
+//   for (const items of numbers) {
+//     total += items;
+//   }
+// }
+// console.log(alert(`Общая сумма чисел равна ${+total}`));
+
+
+/*
+  ⚠️ ЗАДАНИЕ ПОВЫШЕННОЙ СЛОЖНОСТИ - ВЫПОЛНЯТЬ ПО ЖЕЛАНИЮ
+  
+  Напишите скрипт имитирующий авторизацию пользователя.
+  
+  Есть массив паролей зарегистрированных пользователей passwords. 
+  
+  При посещении страницы, необходимо попросить пользователя ввести свой пароль,
+  после чего проверить содержит ли массив passwords пароль введенный пользователем.
+  
+  Пароль можно ввести не верно всего n раз, кол-во хранится в переменной attempts.
+  Подсказка: используйте цикл do...while.
+  Если был введен пароль который есть в массиве passwords, вывести alert 
+  с текстом 'Добро пожаловать!' и прекратить спрашивать пароль в цикле.
+  Если был введен не существующий пароль, отнять от лимита попыток единицу, 
+  вывести alert с текстом "Неверный пароль, у вас осталось n попыток", 
+  где n это оставшийся лимит. 
+  
+  После того как пользователь закрыл alert, запросить пароль снова. 
+  Продолжать запрашивать пароль до тех пор, пока пользователь не введет 
+  существующий пароль, не кончатся попытки или пока пользователь 
+  не нажмет Cancel в prompt.
+  Если закончились попытки, вывести alert с текстом "У вас закончились попытки, аккаунт заблокирован!"
+  
+  Если пользователь нажмет Cancel, прекратить выполнение цикла.
+*/
+
+// const passwords = ['qwerty', '111qwe', '123123', 'r4nd0mp4zzw0rd'];
+// let attempts = 3;
+// let inputPassword;
+
+// do {
+//   inputPassword = prompt('Enter password:');
+//   if (passwords.includes(inputPassword)) {
+//     alert('Добро пожаловать!');
+//   } else {
+//     attempts -= 1;
+//     if (attempts > 0) {
+//       alert(`Неверный пароль, у вас осталось ${attemps} попыток`);
+//     }
+
+//     else {
+//       alert('У вас закончились попытки, аккаунт заблокирован!')
+//     }
+//   }
+// }while (attempts > 0 && inputPassword !== null);
+
+
+// рабочая версия
+
+const passwords = ['qwerty', '111qwe', '123123', 'r4nd0mp4zzw0rd'];
+let attempts = 3;
+let inputPassword;
 do {
-   userInput = Number(prompt('Введите число'));
-   if(userInput !==0)
-   numbers.push(userInput);
-   
-   console.log(numbers);
-}
-while (userInput);
-console.log(userInput);
-
-if (numbers.length !== total){
-  for (const items of numbers){
-      total +=items;
-   }
-}
-console.log(alert (`Общая сумма чисел равна ${+total}`));
-
-
-
-
+  inputPassword = prompt('Enter password: ');
+  if (passwords.includes(inputPassword)) {
+    alert('Добро пожаловать!');
+    break;
+  }
+  else if (inputPassword !== null) {
+    attempts -= 1;
+    if(attempts > 0){
+      alert(`Неверный пароль, у вас осталось ${attempts} попыток`);
+    }
+    
+    else {
+      alert('У вас закончились попытки, аккаунт заблокирован!');
+    }
+  }
+} while (attempts > 0 && inputPassword !== null);
