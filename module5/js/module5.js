@@ -611,10 +611,36 @@ const users = [
 * Получить массив всех скиллов всех пользователей (поле skills), при этом не должно быть
 * повторяющихся скиллов и они должны быть отсортированы в алфавитном порядке
 */
-// const getAllUniqueSkills = arr => {...};
+// const getAllUniqueSkills = arr => 
+const getScills = function(users){
+  let  array = [];
+   users.forEach(function(element){
+    //  console.log(element.skills); 
+     array = array.concat(element.skills);
+   });
+  return array;
+}
+getScills(users);
+function arrSort(skills){
+  return skills.sort();
+}
+let sort = arrSort(getScills(users));
+console.log(sort);
 
-// console.log(getAllSkills(users));
-// // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+const isUnique = function(arr){
+  //   let newSkills = [];
+  //   arr.forEach(function(item){
+  //     if(array.includes(item)){
+  //       newSkills.push(item)
+  //     }  
+  //   });
+  //   return newSkills;  
+  // }
+  // let uniqS = isUnique(arrSort(getScills(users)));  
+  // console.log(uniqS);
+ 
+console.log(getAllSkills(users));
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
 
                              
 // /**
@@ -626,3 +652,104 @@ const users = [
 // // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
 
 
+// const Nat = {
+//   eyeColor: 'green',
+//   masa: 50,
+//   height: '150cm',
+//   mama: {},
+//   sing: function numberrr (num){
+//     return this.num;
+//   },
+// };
+
+// function numberrr (num){
+//   return Nat.num;
+// }
+// numberrr();
+
+// var myCar = new Object();
+// myCar.make = 'Ford';
+// myCar.model = 'Mustang';
+// myCar.year = 19 69;
+
+// const myCar2 = {
+//   make: 'volovo',
+//   model: 'fff',
+//   year: 1970,
+// };
+
+// myCar2.eat = function eatCar2(){
+//   return 'oil';
+// }
+
+// // let t = 'eat';
+// myCar2['eat'] = function eatCar22(){
+//   return 'oil';
+// };
+
+// console.log(myCar2.eat());
+
+// myCar.model;
+// myCar2.color;
+
+// let zz = 'zz  z';
+// myCar2[zz] = 'aaa';
+// console.log(myCar2);
+// console.log(myCar2['zz  z']);
+//  ;
+
+// function alertName(){
+//   return;
+// }
+// alertName();
+// console.log('keks');
+
+// window.alertName();
+
+// var c = {
+//   name: 'The c object',
+//   log: function(){
+//     this.name = 'Updates c object';
+//     console.log(this);
+
+//     var setname = function(newname) {
+//       this.name = newname;
+//       console.log(this);      
+//     }
+
+//     console.log(this);        
+//   }
+// };
+// console.log(c.log());
+
+
+// function name () {
+//   return 'd';
+// }
+
+// const d = () => "d";
+
+// const f = () => {
+//   const a = 'd' + 'c';
+//   return a;
+// }
+// console.log(f())
+
+
+// // const getUseer = function(arr, min, max) {
+
+// //   function filterCheck(element) {
+// //     return element.age > min && element.age < max;
+// //   }
+
+// //   return arr.filter(filterCheck);
+// // }
+
+// const getUseer = (arr, min, max) => arr.filter((element) => element.age > min && element.age < max);
+  
+
+// const ccc = getUseer([{
+//   age: 30
+// }], 2, 35);
+
+// console.log(ccc);

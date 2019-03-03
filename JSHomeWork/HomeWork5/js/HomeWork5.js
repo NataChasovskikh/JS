@@ -102,9 +102,9 @@ const users = [
    },
  ];
 
-// const getAllNames = (arr) => arr.map((element) => element['name']);
+const getAllNames = (arr) => arr.map((element) => element['name']);
 
-// console.log(getAllNames(users)); 
+console.log(getAllNames(users)); 
 // [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
 
                             
@@ -112,64 +112,55 @@ const users = [
  * Получить массив объектов пользователей по цвету глаз (поле eyeColor)
  */
 
-// const getUsersByEyeColor = (arr, color) => arr.filter((element) => element.eyeColor === color);
-
-// console.log(getUsersByEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
+const getUsersByEyeColor = (arr, color) => arr.filter((element) => element.eyeColor === color);
+console.log(getUsersByEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 
                                             
 /**
  * Получить массив имен пользователей по полу (поле gender)
  */
-// const getUsersByGender = (arr, gender) => arr.filter((element) => element.gender === gender).map((element) => element.name);
-// console.log(getUsersByGender(users));
-
-
-// console.log(getUsersByGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
+const getUsersByGender = (arr, gender) => arr.filter((element) => element.gender === gender).map((element) => element.name);
+console.log(getUsersByGender(users));
+console.log(getUsersByGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 
 /**
  * Получить массив только неактивных пользователей (поле isActive)
  */
-// const getInactiveUsers = arr => arr.filter((element) => !element.isActive);
-
-// console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
+const getInactiveUsers = arr => arr.filter((element) => !element.isActive);
+console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
                       
                                  
 /**
  * Получить пользоваля (не массив) по email (поле email, он уникальный)
  */
-// const getUserByEmail = (arr, email) => arr.filter((element) => element.email === email);
-
-// console.log(getUserByEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
-// console.log(getUserByEmail(users, 'elmahead@omatom.com')); // {объект пользователя Elma Head}
+const getUserByEmail = (arr, email) => arr.find((element) => element.email === email);
+console.log(getUserByEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
+console.log(getUserByEmail(users, 'elmahead@omatom.com')); // {объект пользователя Elma Head}
 
 
 /**
  * Получить массив пользователей попадающих в возрастную категорию от min до max лет (поле age)
  */
-// const getUsersWithAge = (arr, min, max) => arr.filter((element) => element.age > min && element.age < max);
+const getUsersWithAge = (arr, min, max) => arr.filter((element) => element.age > min && element.age < max);
 
-// console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
-                                            
-// console.log(getUsersWithAge(users, 30, 40)); 
+console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
+console.log(getUsersWithAge(users, 30, 40)); 
 // // [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
-                                 
-                                 
+                                     
 /**
  * Получить общую сумму баланса (поле balance) всех пользователей
  */
-// const getTotalBalance = arr => arr.reduce((acc, element) => acc + element.balance, 0);
-
-// console.log(getTotalBalance(users)); // 20916
-                                
+const getTotalBalance = arr => arr.reduce((acc, element) => acc + element.balance, 0);
+console.log(getTotalBalance(users)); // 20916                                
                                 
 // /**
 //  * Массив имен всех пользователей у которых есть друг с указанным именем
 //  */
-// const getUsersByFriend = (arr, name) => arr.filter((element) => element.friends.includes(name)).map((element) => element.name);
+const getUsersByFriend = (arr, name) => arr.filter((element) => element.friends.includes(name)).map((element) => element.name);
 
-// console.log(getUsersByFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
-// console.log(getUsersByFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+console.log(getUsersByFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+console.log(getUsersByFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
                                             
 
 
@@ -182,8 +173,33 @@ const users = [
 * повторяющихся скиллов и они должны быть отсортированы в алфавитном порядке
 */
 // const getAllUniqueSkills = arr => {...};
+// const getScills = function(users){
+//   let  array = [];
+//    users.forEach(function(element){
+//     //  console.log(element.skills); 
+//      array = array.concat(element.skills);
+//    });
+//   return array;
+// }
+// getScills(users);
+// function arrSort(skills){
+//   return skills.sort();
+// }
+// let sort = arrSort(getScills(users));
+// console.log(sort);
 
-// console.log(getAllSkills(users));
+// const isUnique = function(arr){
+//   let newSkills = [];
+//   arr.forEach(function(item){
+//     if(array.includes(item)){
+//       newSkills.push(item)
+//     }  
+//   });
+//   return newSkills;  
+// }
+// let uniqS = isUnique(arrSort(getScills(users)));  
+// console.log(uniqS);
+// console.log(getSkills(users));
 // // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
 
                              
