@@ -628,18 +628,19 @@ let sort = arrSort(getScills(users));
 console.log(sort);
 
 const isUnique = function(arr){
-  //   let newSkills = [];
-  //   arr.forEach(function(item){
-  //     if(array.includes(item)){
-  //       newSkills.push(item)
-  //     }  
-  //   });
-  //   return newSkills;  
-  // }
-  // let uniqS = isUnique(arrSort(getScills(users)));  
-  // console.log(uniqS);
+    let newSkills = [];
+    arr.forEach(function(item){
+      if(!newSkills.includes(item)){
+        newSkills.push(item)
+      } 
+    });
+    return newSkills;  
+  }
+
+  let uniqS = isUnique(arrSort(getScills(users)));  
+  console.log(uniqS);
  
-console.log(getAllSkills(users));
+// console.log(getAllSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
 
                              
