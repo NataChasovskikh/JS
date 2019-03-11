@@ -21,21 +21,27 @@
 //   🔔 PS: для удобства и чистоты кода сохраните в переменные сообщения отображаемые в alert
 // */
 
-const adminLogin = 'admin';
-const adminPassword = 'm4ngo1zh4ackz0r';
 
-let password;
 
-let login = prompt('Введите логин');
-if (login === null) {
-   alert('Отменено пользователем!');   
-}
-if (login !== adminLogin) {
-   alert('Доступ запрещен, неверный логин!');
-}
-if (login === adminLogin) {
-  let password = prompt ('Введите пароль');
-  if (password === adminPassword) {alert ('Добро пожаловать!');}
-  if (password === null) {alert ('Отменено пользователем!');}
-  else if (password !== adminPassword) {alert  ('Доступ запрещен, неверный пароль!');}  
-}
+
+
+
+
+// const adminLogin = 'admin';
+// const adminPassword = 'm4ngo1zh4ackz0r';
+
+// let password;
+
+// let login = prompt('Введите логин');
+// if (login === null) {
+//    alert('Отменено пользователем!');   
+// }
+// if (login !== adminLogin) {
+//    alert('Доступ запрещен, неверный логин!');
+// }
+// if (login === adminLogin) {
+//   let password = prompt ('Введите пароль');
+//   if (password === adminPassword) {alert ('Добро пожаловать!');}
+//   if (password === null) {alert ('Отменено пользователем!');}
+//   else if (password !== adminPassword) {alert  ('Доступ запрещен, неверный пароль!');}  
+// }
