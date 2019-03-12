@@ -14,27 +14,39 @@
   3. Повесьте все посты в какой-то уже существующий DOM-узел.
 */
 
-// const posts = [
-//    {
-//      img: "https://placeimg.com/400/150/arch",
-//      title: "Post title 1",
-//      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo dignissimos ea temporibus voluptatem maiores maxime consequatur impedit nobis sunt similique voluptas accusamus consequuntur, qui modi nesciunt veritatis distinctio rem!",
-//      link: 'link-1.com'
-//    },
-//    {
-//       img: "https://placeimg.com/400/150/nature",
-//       title: "Post title 2",
-//       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo dignissimos ea temporibus voluptatem maiores maxime consequatur impedit nobis sunt similique voluptas accusamus consequuntur, qui modi nesciunt veritatis distinctio rem!",
-//       link: 'link-2.com'
-//     },
-//     {
-//       img: "https://placeimg.com/400/150/arch",
-//       title: "Post title 3",
-//       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo dignissimos ea temporibus voluptatem maiores maxime consequatur impedit nobis sunt similique voluptas accusamus consequuntur, qui modi nesciunt veritatis distinctio rem!",
-//       link: 'link-3.com'
-//     }
-//   ];
+const posts = [
+   {
+     img: "https://placeimg.com/400/150/arch",
+     title: "Post title 1",
+     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo dignissimos ea temporibus voluptatem maiores maxime consequatur impedit nobis sunt similique voluptas accusamus consequuntur, qui modi nesciunt veritatis distinctio rem!",
+     link: 'link-1.com'
+   },
+   {
+      img: "https://placeimg.com/400/150/nature",
+      title: "Post title 2",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo dignissimos ea temporibus voluptatem maiores maxime consequatur impedit nobis sunt similique voluptas accusamus consequuntur, qui modi nesciunt veritatis distinctio rem!",
+      link: 'link-2.com'
+    },
+    {
+      img: "https://placeimg.com/400/150/arch",
+      title: "Post title 3",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo dignissimos ea temporibus voluptatem maiores maxime consequatur impedit nobis sunt similique voluptas accusamus consequuntur, qui modi nesciunt veritatis distinctio rem!",
+      link: 'link-3.com'
+    }
+  ];
 
+  function createCard(array){
+    for(let item of array){
+        createPostCard(item);
+        console.log(item)
+    }
+  }
+
+  function createPostCard(post){
+    let card = document.querySelector('#root');
+    card.innerHTML += `<img src = '${post.img}'><a href = '${post.link}'>link</a><h2>${post.title}</h2><p>${post.text}</p>`;
+  }
+  createCard(posts);
 
 
 
