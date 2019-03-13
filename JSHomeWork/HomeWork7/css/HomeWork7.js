@@ -47,7 +47,30 @@ const posts = [
     card.innerHTML += `<img src = '${post.img}'><a href = '${post.link}'>link</a><h2>${post.title}</h2><p>${post.text}</p>`;
   }
   createCard(posts);
+  //======== васин вариант =====
 
+  let adDiv = document.querySelector('.section');
+function createPostCard(){
+let imge = posts.reduce((pic, i)=>pic + `<div class="post"><img class="post__image" src = ${i.img}><h2 class="post__title">${i.title}</h2><p class="post__text"> ${i.text}</p><a class="link" href="#">${i.link}</a></div>`,"");
+adDiv.innerHTML += `${imge}`;
+  }
+
+
+  createPostCard(posts);
+  //====== наташин вариант =========
+  function createCards(arr) {
+    arr.map(item => createPostCard(item));
+    
+    }
+    
+    function createPostCard(post) {
+      let sect = document.querySelector("#gallery");
+      let littleSect = document.createElement('div');
+      let card = `<img class="card__image" src = '${post.img}'> <h2 class = "card__title"> ${post.title} </h2> <p class = "card__text"> ${post.text} </p> <a href = '${post.link}'> ${post.link} </a>`;
+      littleSect.innerHTML = card;
+      sect.append(littleSect);
+      littleSect.classList.add('card'); 
+    }
 
 
 
