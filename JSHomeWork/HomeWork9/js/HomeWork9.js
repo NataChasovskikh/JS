@@ -3,9 +3,12 @@
 let startDate;
 let currentTime = 0;
 let startId;
+let timeId;
+let p = document.querySelector('.js-time');
+
 
 const start = function (callback){
-   let timeId = setInterval(callback, 100);
+   timeId = setInterval(callback, 100);
    return timeId;
 }
 
@@ -17,7 +20,7 @@ function time (){
 // startId = start(time);
 // console.log(startId);
 function format (mmsec){
-      
+
    let msec = Math.floor((mmsec % 1000));
    // console.log(msec);
    let sec = Math.floor((mmsec / 1000) % 60);
@@ -25,13 +28,14 @@ function format (mmsec){
    let min = Math.floor((mmsec / 1000 / 60) % 60);
    // console.log(min);
    let show = ` ${min} : ${sec}.${msec}`;
-   console.log(show); 
+   p.textContent = show;
    return show;
 }
 
-const reset = function(id){
+const reset = function(timeId){
    currentTime = 0;
-   clearInterval(id);
+   clearInterval(timeId);
+   format (currentTime);
    clickReset();
 }
 
@@ -43,7 +47,7 @@ startBtn.addEventListener('click', pause);
 let clickPause = () => startBtn.textContent = "pause";
 
 const laptBtn = document.querySelector('.js-take-lap');
-startBtn.addEventListener('click', addUl);
+laptBtn.addEventListener('click', addUl);
 const addLi = document.querySelector('.js-laps')
 function addUl (){
    const li = document.createElement("li");
@@ -54,7 +58,7 @@ function addUl (){
 
 const resetBtn = document.querySelector('.js-reset');
 resetBtn.addEventListener('click', function(){
-   reset(startId);
+   reset(timeId);
 });
 // resetBtn.addEventListener('click',reset.bind())
 let clickStart = () => startBtn.textContent = "continiu";
@@ -67,7 +71,7 @@ function pause(){
       clearInterval(startId);
       isClick = true;
       clickPause();
-      
+
    }else {
       startId = start(time);
       isClick = false;
@@ -75,6 +79,89 @@ function pause(){
    }
 }
 
-// const lapBtn = document.querySelector('.js-take-lap');
-// lapBtn.addEventListener('click', pause);
+const lapBtn = document.querySelector('.js-take-lap');
+lapBtn.addEventListener('click', pause);
+
+
+//====================================
+// let startDate;
+// let currentTime = 0;
+// let startId;
+// // let p = document.querySelector('.js-time');
+
+// function start (){
+//    let timeId = setInterval(()=>time(), 100);
+//    return timeId;
+// }
+
+// function time (){
+//    let mmsec;
+//    mmsec = currentTime += 100;
+// }
+// // startId = start(time);
+// // console.log(startId);
+
+// function format (mmsec){      
+//    let msec = Math.floor((mmsec % 1000)); 
+//    let sec = Math.floor((mmsec / 1000) % 60);   
+//    let min = Math.floor((mmsec / 1000 / 60) % 60);  
+//    let show = `${min} : ${sec}.${msec}`; 
+//    // p.textContent = show;
+// }
+
+
+
+// function reset (id){
+//    clearInterval(id);  
+//    clickReset(); 
+// }
+
+// // reset(startId);.
+
+// const startBtn = document.querySelector('.js-start');
+// startBtn.addEventListener('click', pause);
+
+// let clickPause = () => startBtn.textContent = "pause";
+
+// const laptBtn = document.querySelector('.js-take-lap');
+// laptBtn.addEventListener('click', addUl);
+// const addLi = document.querySelector('.js-laps');
+
+// function addUl (){
+//    const li = document.createElement("li");
+//    console.log(li); 
+//    li.textContent = format(currentTime);
+//    addLi.appendChild(li);
+// }
+
+// const resetBtn = document.querySelector('.js-reset');
+// resetBtn.addEventListener('click', function(){
+//    reset(startId);
+// });
+
+// // resetBtn.addEventListener('click',reset.bind())
+
+// let clickStart = () => startBtn.textContent = "continiu";
+// let clickReset = () => startBtn.textContent = "START";
+
+
+ 
+
+
+// let isClick = false; 
+
+
+// function pause(){
+//    if(isClick === false && startId){
+//       clearInterval(startId);
+//       isClick = true;
+//       clickPause();
+      
+//    }else {
+//       startId = start();
+//       isClick = false;
+//       clickStart();
+//    }   
+// }
+
 

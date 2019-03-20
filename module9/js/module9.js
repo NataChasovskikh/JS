@@ -72,43 +72,326 @@
 // 5. * Познакомьтесь с компонентом Bootstrap — индикатором загрузки (Индикатор загрузки в Bootstrap, видео об индикаторе загрузки в Bootstrap). Создайте скрипт, который будет анимировать изменение показателя индикатора загрузки
 // 6. * Создать скрипт, который при нажатии на гиперссылку анимировал движение элемента с классом .play по параболе в ветками вниз.
 
-// const log = function(element){
-//    console.log(element);
+//===========ДОПЫ=================
+//========доп.задание 1 модуль 9========
+/*
+ * Есть массив цветов в hex-формате и кнопки Start и Stop. 
+ * 
+ * Напиши скрипт, который после нажатия кнопки Start, раз в секунду
+ * меняет цвет фона body на случайное значение из массива. Используй
+ * инлайн-стиль для изменения background-color.
+ *
+ * При нажатии на кнопку Stop, изменении цвета фона должно останавливаться.
+ * 
+ * Учти, что на кнопку Start можно нажать бесконечное количество раз.
+ * Сделай так, чтобы пока изменение темы запушено, кнопка Start была не активна.
+*/
+
+// const colors = [
+//    "#FFFFFF",
+//    "#2196F3",
+//    "#4CAF50",
+//    "#FF9800",
+//    "#009688",
+//    "#795548"
+//  ];
+ 
+//  const start = document.querySelector('[data-action="start"]');
+//  const stop = document.querySelector('[data-action="stop"]');
+//  const body = document.querySelector('body');
+//  start.addEventListener('click', changColor);
+//  stop.addEventListener('click', stopColor);
+//  let inter;
+ 
+//  function changColor(){
+//    inter = setInterval(() => {
+//      let rand = Math.floor(Math.random() * colors.length);
+//      body.style.backgroundColor = colors[rand];
+//      console.log(rand);    
+//    }, 1000);
+//    start.disabled = true;
+   
+//  };
+ 
+//    function stopColor(){
+//      clearInterval(inter);
+//      start.disabled = false;
+//    }
+
+//========доп.задание 2 модуль 9========
+/* 
+  Напишите функцию getFormattedTime(time), которая 
+  получает time - кол-во миллисекунд и возвращает 
+  строку времени в формате xx:xx.x, 01:23.6, минуты:секунды.миллисекунды.
+  
+  Используйте возможности объекта Date для работы со временем.
+  
+  Из миллисекунд нам интересен только разряд с сотнями,
+  то есть если сейчас 831мс то нам интересна исключительно цифра 8.
+*/
+
+// function getFormattedTime(time) {
+//   let date = new Date (time)
+//   let minutes = date.getMinutes();
+//   if(minutes < 10){
+//     minutes = '0' + minutes;
+//   }
+//   let seconds = date.getSeconds();
+//   if(seconds < 10){
+//    seconds = '0' + seconds;
+//   }
+//   let milisec = parseInt((date.getMilliseconds()) / 100);
+  
+//    return `${minutes} : ${seconds}. ${milisec}`;
+//   }
+ 
+//  console.log(
+//    getFormattedTime(1523621052858)
+//  ); // 04:12.8
+ 
+//  console.log(
+//    getFormattedTime(1523621161159)
+//  ); // 06:01.1
+ 
+//  console.log(
+//    getFormattedTime(1523621244239)
+//  ); // 07:24.2
+
+//================
+// let minutes;
+// let seconds;
+// let milliseconds;
+
+// function getFormattedTime(time) {
+//   let date = new Date(time);
+//   console.log(date);
+  
+//   minutes = ("0" + date.getMinutes()).slice(-2);
+//   seconds = ("0" + date.getSeconds()).slice(-2);
+//   milliseconds = parseInt(date.getMilliseconds() / 100);
+
+//   return `${minutes}:${seconds}.${milliseconds}`;
 // }
 
-// for(let i = 0; i <= 10; i++){ 
-//    setTimeout(function(){
-//       log(i)
-//    })
+//========доп.задание 3 модуль 9========
+
+/* 
+  Напишите скрипт, реализующий базовый функционал
+  таймера, запуск отсчета времени и сброс счетчика
+  в исходное состояние.
+  
+  Используйте возможности объекта Date для работы со временем.
+  
+  Создайте функцию startTimer, которая будет запускать
+  отсчет времени с момента ее нажатия, она вызывается 
+  при клике на кнопку с классом js-timer-start.
+  
+  Создайте функцию stopTimer, которая будет останавливать
+  счетчик, она вызывается при клике на кнопку с классом js-timer-stop.
+  
+  Используйте вспомогательную функцию updateClockface 
+  которая обновляет значение счетчика в интерфейсе. 
+  Для составления строки времени в формате xx:xx.x, 
+  исользуйте функцию getFormattedTime из задания номер 3.
+  
+  Подсказка: так как нам интересны исключительно сотни миллисекунд,
+      нет смысла выполнять пересчет времени чаще чем каждые 100мс.
+*/
+
+// const clockface = document.querySelector(".js-clockface");
+// const startBtn = document.querySelector(".js-timer-start");
+// const stopBtn = document.querySelector(".js-timer-stop");
+
+// const timer = {
+//   startTime: null,
+//   deltaTime: null,
+//   id: null
 // };
 
-// console.log("Hello world!");
-// console.log("Hello world!1");
-// console.log("Hello world2!");
-// console.log("Hello world!3");
-// console.log("Hello world!4");
+/*
+* Вспомогательные функции
+*/
 
-
-
-// let gggg = 1;
-// let jjjj = 2;
-// function bind1 (context, arch){
-//    console.log(context);
-//    console.log(arch);   
+/*
+* Обновляет поле счетчика новым значением при вызове
+* аргумент time это кол-во миллисекунд
+*/
+// function updateClockface(elem, time) {
+  // Используйте функцию getFormattedTime из задания #1
+  // elem.textContent = getFormattedTime(time);
 // }
 
-// bind1('ggg', jjjj );
+/*
+* Подсветка активной кнопки
+*/
+// function setActiveBtn(target) {
+//   if(target.classList.contains('active')) {
+//     return;
+//   }
+  
+//   startBtn.classList.remove('active');
+//   stopBtn.classList.remove('active');
+  
+//   target.classList.add('active');
+// }
+// let interval;
+// let between = 0;
+// function startTimer(){
+//   let date= Date.now() - between;
+//   interval = setInterval(()=>{
+//     let newDate =Date.now();
+//     let TimeChengeMil = newDate-date;
+//     let forCount =new Date (TimeChengeMil);
+//     let minutes = forCount.getMinutes();
+//     let seconds = forCount.getSeconds();
+//     let milisec =parseInt((forCount.getMilliseconds())/100);
+//     if(seconds < 10){
+//    seconds = '0' + seconds;
+//   }
+//   let send = ( `минут: ${minutes} секунд:${seconds}. милисек:${milisec}`);
+//   clockface.textContent=send;
+//   between = TimeChengeMil;
+//     }, 100)
+   
+// }
+// function stopTimer (){
+//   clearInterval(interval);
+ 
+// };
 
-// const dog = {
-//    name: "far",
-//    color: "black",
-//    age: 3
+// startBtn.addEventListener('click', startTimer);
+// stopBtn.addEventListener('click', stopTimer);
+//=========
+// const clockface = document.querySelector(".js-clockface");
+// const startBtn = document.querySelector(".js-timer-start");
+// const stopBtn = document.querySelector(".js-timer-stop");
+
+// const timer = {
+//   startTime: null,
+//   deltaTime: null,
+//   id: null
+// };
+
+// function getFormattedTime(time) {
+//   let myDate = new Date(time);
+//   let minutes = myDate.getMinutes();
+//   let second = Math.abs(Math.floor(myDate.getSeconds()));
+//   let millisecond = Math.abs(Math.floor(myDate.getMilliseconds() / 100) % 60);
+//   if (second.toString().length == 1) second = '0' + second;
+//   if (minutes.toString().length == 1) minutes = '0' + minutes;
+
+//   return `${minutes}:${second}.${millisecond}`;
 // }
 
-// const div = document.querySelector('#time');
-// const div = document.getElementById('time');
-// const div = document.getElementsByTagName('div');
-// console.log(div);
+// function updateClockface(elem, time) {
+//   // Используйте функцию getFormattedTime из задания #2
+//   elem.textContent = getFormattedTime(time);
+// }
+
+// function startTimer() {
+//   timer.startTime = Date.now();
+
+//   if (timer.id != null) {
+//     clearInterval(timer.id);
+//   }
+
+//   timer.id = setInterval(function () {
+//     timer.deltaTime = (Date.now() - timer.startTime);
+//     updateClockface(clockface, timer.deltaTime);
+//   }, 100);
+  
+// }
+
+// stopBtn.addEventListener('click', function () {
+//   console.log("clear called");
+//   clearInterval(timer.id);
+// });
+
+// startBtn.addEventListener('click', startTimer);
+
+// /*
+//  * Подсветка активной кнопки
+//  */
+// function setActiveBtn(target) {
+//   if (target.classList.contains('active')) {
+//     return;
+//   }
+
+//   startBtn.classList.remove('active');
+//   stopBtn.classList.remove('active');
+
+//   target.classList.add('active');
+// }
+
+// //========доп.задание 4 модуль 9========
+
+ /*
+ * Есть переменная quantity хранящиая в себе
+ * текущее количество единиц какого-то товара на складе.
+ * 
+ * Напиши функцию processOrder(value), получающую
+ * кол-во товаров заказанных покупателем, и возвращающую промис.
+ * 
+ * Для имитации проверки достаточного количества товаров
+ * на складе используй setTimeout с задержкой 500мс.
+ * 
+ * Если на складе товаров больше либо равно заказанному
+ * количеству, функция возвращает промис который исполняется
+ * успешно со строкой "Ваш заказ готов!".
+ * 
+ * В противном случае, со строкой "К сожалению на складе не достаточно товаров!".
+ * 
+ * Если же пользователь ввел не число, то промис выполняется с ошибкой
+ * и значением "Некорректный ввод!".
+*/
+
+// const DELAY = 1000;
+// const quantity = 100;
+
+// function processOrder(amount) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if(isNaN(amount)) {
+//         reject('Некорректный ввод!');
+//       } else {
+//         quantity - amount > 0 ? resolve("Ваш заказ готов!") : resolve("К сожалению на складе не достаточно товаров!");
+//       }
+//     }, DELAY);
+//  });
+// }
+//===============
+// const DELAY = 1000;
+// const quantity = 100;
+
+// function processOrder(order){
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if(!isNaN(order)){
+//         if(order <= quantity){          
+//           resolve("Ваш заказ готов!")
+//         }else resolve("К сожалению на складе не достаточно товаров!");
+//       }else reject("Некорректный ввод!");
+//     },DELAY/2)
+//   }) 
+// };
+// // Вызовы функции для проверки
+// processOrder(50)
+//   .then(console.log) // Ваш заказ готов!
+//   .catch(console.log);
+
+// processOrder(50)
+//   .then(console.log) // Ваш заказ готов!
+//   .catch(console.log);
+
+// processOrder(500)
+//   .then(console.log) // К сожалению на складе недостаточно товаров!
+//   .catch(console.log);
+
+// processOrder("lorem")
+//   .then(console.log)
+//   .catch(console.log); // Некорректный ввод!
+//===================================
 
 
+  
 

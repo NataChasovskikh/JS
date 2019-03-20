@@ -1,0 +1,24 @@
+body {
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+.time {
+   margin-bottom: 10px;
+   font-family: "Roboto Mono", monospace;
+   font-size: 80px; 
+}
+.btn {
+   display: inline;
+   text-transform: uppercase;
+   border: 0;
+   background-color: #212121;
+   color: #ffffff;
+   padding: 10px 20px;
+   cursor: pointer;
+   font-size: 28px;
+   border-radius: 2px;
+   font-family: "Roboto", sans-serif;
+}
