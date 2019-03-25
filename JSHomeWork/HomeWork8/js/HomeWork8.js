@@ -54,12 +54,12 @@
 */
 
 const galleryItems = [
-   { preview: '../../img/preview1.jpg', fullview: '../../img/fullview1.jpg', alt: "alt text 1" },
-   { preview: '../../img/preview2.jpg', fullview: '../../img/fullview2.jpg', alt: "alt text 2" },
-   { preview: '../../img/preview3.jpg', fullview: '../../img/fullview3.jpg', alt: "alt text 3" },
-   { preview: '../../img/preview4.jpg', fullview: '../../img/fullview4.jpg', alt: "alt text 4" },
-   { preview: '../../img/preview5.jpg', fullview: '../../img/fullview5.jpg', alt: "alt text 5" },
-   { preview: '../../img/preview6.jpg', fullview: '../../img/fullview6.jpg', alt: "alt text 6" },
+   { preview: './img/preview1.jpg', fullview: './img/fullview1.jpg', alt: "alt text 1" },
+   { preview: './img/preview2.jpg', fullview: './img/fullview2.jpg', alt: "alt text 2" },
+   { preview: './img/preview3.jpg', fullview: './img/fullview3.jpg', alt: "alt text 3" },
+   { preview: './img/preview4.jpg', fullview: './img/fullview4.jpg', alt: "alt text 4" },
+   { preview: './img/preview5.jpg', fullview: './img/fullview5.jpg', alt: "alt text 5" },
+   { preview: './img/preview6.jpg', fullview: './img/fullview6.jpg', alt: "alt text 6" },
  ];
  
  
