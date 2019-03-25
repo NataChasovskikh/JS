@@ -391,6 +391,75 @@
 //   .then(console.log)
 //   .catch(console.log); // Некорректный ввод!
 //===================================
+//============= доашка Наташин вариант ===========
+const startBtn = document.querySelector(".js-start");
+const resetBtn = document.querySelector(".js-reset");
+const lapBtn = document.querySelector(".js-take-lap");
+const timer = document.querySelector(".js-time");
+const listTime = document.querySelector(".js-laps");
+let startTime;
+let pauseTime = 0;
+let idInt = null;
+let currentTime;
+let delta;
+let minutes;
+let seconds;
+let milliseconds;
+let arrTimer = [];
+
+function start() {
+  resetBtn.disabled = false;
+  if (startBtn.textContent === "Start" || startBtn.textContent === "Continue") {
+    startBtn.textContent = "Pause";
+    startTime = Date.now() - pauseTime;
+    idInt = setInterval(changeTimer, 100);
+  } else if (startBtn.textContent === "Pause") {
+    clearInterval(idInt);
+    startBtn.textContent = "Continue";
+  }
+};
+
+function changeTimer() {
+  currentTime = Date.now();
+  delta = currentTime - startTime;
+  timer.textContent = getTimeFormat(delta);
+  pauseTime = delta;
+};
+
+function getTimeFormat(time) {
+  let date = new Date(time);
+  minutes = ("0" + date.getMinutes()).slice(-2);
+  seconds = ("0" + date.getSeconds()).slice(-2);
+  milliseconds = parseInt(date.getMilliseconds() / 100);
+  return `${minutes}:${seconds}.${milliseconds}`;
+};
+
+function reset() {
+  clearInterval(idInt);
+  idInt = 0;
+  currentTime = "00:00.0";
+  timer.textContent = currentTime;
+  pauseTime = 0;
+  startBtn.textContent = "Start";
+  resetBtn.disabled = true;
+};
+function addListTime() {
+  let item = document.createElement("li");
+  console.log(item);
+  listTime.appendChild(item);
+  arrTimer.push(timer.textContent);
+  console.log(arrTimer);
+  item.textContent = timer.textContent;
+};
+
+startBtn.addEventListener("click", start);
+resetBtn.addEventListener("click", reset);
+lapBtn.addEventListener("click", addListTime);
+Collapse
+
+
+
+
 
 
   

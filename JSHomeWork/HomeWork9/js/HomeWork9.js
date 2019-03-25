@@ -17,15 +17,17 @@ function time (){
    mmsec = currentTime += 100;
    format(mmsec);
 }
-// startId = start(time);
-// console.log(startId);
+
 function format (mmsec){
 
    let msec = Math.floor((mmsec % 1000));
+   if (msec.toString().length == 1) msec = msec + '0' + '0';
    // console.log(msec);
    let sec = Math.floor((mmsec / 1000) % 60);
+   if (sec.toString().length == 1) sec = '0' + sec;
    // console.log(sec);
    let min = Math.floor((mmsec / 1000 / 60) % 60);
+   if (min.toString().length == 1) min = '0' + min;
    // console.log(min);
    let show = ` ${min} : ${sec}.${msec}`;
    p.textContent = show;

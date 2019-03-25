@@ -442,10 +442,98 @@
 // menu.addEventListener("click", activeLink);
 
 
-//=======================================================
+//===============homework8========================================
+//  const container = document.querySelector('.js-image-gallery');
+ 
+//  let createFullview = () => {
+//    let fullviewEl = document.createElement('div');
+//    fullviewEl.classList.add('fullviewEl');
+//    let fullviewImg = document.createElement('img');
+//    fullviewImg.classList.add('fullviewImg');
+ 
+//    fullviewImg.src = galleryItems[0].fullview;
+ 
+//    fullviewEl.appendChild(fullviewImg);
+//    container.appendChild(fullviewEl);
+//  };
+ 
+//  createFullview();
+ 
+//  let createPreview = () => {
+ 
+//    let ul = document.createElement('ul');
+//    ul.classList.add('previewElements');
+//    container.appendChild(ul);
+ 
+//    galleryItems.forEach(el => {
+//      let li = document.createElement('li');
+//      let img = document.createElement('img');
+//      img.setAttribute("data-fullview", el.fullview);
+//      img.setAttribute("alt", el.alt);
+//      img.src = el.preview;
+//      li.appendChild(img);
+//      ul.appendChild(li);
+//    });
+ 
+//  };
+//  createPreview();
+ 
+//  const preview = document.querySelector('.previewElements');
+ 
+//  const fullview = document.querySelector('.fullviewImg');
+ 
+//  preview.addEventListener('click', event => {
+//    const nodeName = event.target.nodeName;
+//    if (nodeName !== 'IMG') return;
+//    const fullviewSrc = event.target.getAttribute('data-fullview');
+//    fullview.src = fullviewSrc;
+//  });
+///===========================
+// const imgGallery = document.querySelector(".js-image-gallery");
+// const fullview = document.createElement("div");
+// imgGallery.appendChild(fullview);
+// fullview.classList.add("fullview");
+// const fullviewMainImg = document.createElement("img");
+// fullview.appendChild(fullviewMainImg);
+// fullviewMainImg.setAttribute("src", galleryItems[0].fullview);
+// fullviewMainImg.setAttribute("alt", "alt text 1");
+// const preview = document.createElement("ul");
+// imgGallery.appendChild(preview);
+// preview.classList.add("preview");
 
-  // let i = 0;
-  // for(i <= 10; i++){
-  //   console.log("Hello world!");
-  // } 
+// function createImg() {
+//   galleryItems.forEach(function(item) {
+//     const galleryConteiner = document.createElement("li");
+//     preview.appendChild(galleryConteiner);
+//     const galleryImg = document.createElement("img");
+//     galleryConteiner.appendChild(galleryImg);
+//     galleryImg.setAttribute("src", item.preview);
+//     galleryImg.setAttribute("data-fullview", item.fullview);
+//     galleryImg.setAttribute("alt", item.alt);
+//   });
+// }
+// createImg();
 
+// const previewGallery = document.querySelector(".preview");
+
+// function changeFullview(event) {
+//   const target = event.target;
+//   if (target.nodeName !== "IMG") return;
+//   findPreview(target);
+//   lightPreview(target);
+// }
+
+// function findPreview(elem) {
+//   fullviewMainImg.src = elem.dataset.fullview;
+// }
+
+// function lightPreview(elem) {
+//   const currentElem = document.querySelector(".newClass");
+//   if (currentElem) {
+//     currentElem.classList.remove("newClass");
+//   }
+//   elem.classList.add("newClass");
+// }
+
+// previewGallery.addEventListener("click", changeFullview);
+  
