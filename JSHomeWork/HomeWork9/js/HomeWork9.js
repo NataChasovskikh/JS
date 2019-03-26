@@ -7,18 +7,18 @@ let timeId;
 let p = document.querySelector('.js-time');
 
 
-const start = function (callback){
+const start = function (callback) {
    timeId = setInterval(callback, 100);
    return timeId;
 }
 
-function time (){
+function time() {
    let mmsec;
    mmsec = currentTime += 100;
    format(mmsec);
 }
 
-function format (mmsec){
+function format(mmsec) {
 
    let msec = Math.floor((mmsec % 1000));
    if (msec.toString().length == 1) msec = msec + '0' + '0';
@@ -31,10 +31,10 @@ function format (mmsec){
    return show;
 }
 
-const reset = function(timeId){
+const reset = function (timeId) {
    currentTime = 0;
    clearInterval(timeId);
-   format (currentTime);
+   format(currentTime);
    clickReset();
 }
 
@@ -45,30 +45,30 @@ const laptBtn = document.querySelector('.js-take-lap');
 laptBtn.addEventListener('click', addUl);
 const addLi = document.querySelector('.js-laps');
 
-function addUl (){
+function addUl() {
    const li = document.createElement("li");
-   console.log(li); 
+   console.log(li);
    li.textContent = format(currentTime);
    addLi.appendChild(li);
 }
 
 const resetBtn = document.querySelector('.js-reset');
 
-resetBtn.addEventListener('click', function(){
+resetBtn.addEventListener('click', function () {
    reset(timeId);
 });
 
 let clickStart = () => startBtn.textContent = "continiu";
 let clickReset = () => startBtn.textContent = "staRT";
-let isClick = false; 
+let isClick = false;
 
-function pause(){
-   if(isClick === false && startId){
+function pause() {
+   if (isClick === false && startId) {
       clearInterval(startId);
       isClick = true;
       clickPause();
 
-   }else {
+   } else {
       startId = start(time);
       isClick = false;
       clickStart();
@@ -142,7 +142,7 @@ lapBtn.addEventListener('click', pause);
 // let clickReset = () => startBtn.textContent = "START";
 
 
- 
+
 
 
 // let isClick = false; 
@@ -153,12 +153,10 @@ lapBtn.addEventListener('click', pause);
 //       clearInterval(startId);
 //       isClick = true;
 //       clickPause();
-      
+
 //    }else {
 //       startId = start();
 //       isClick = false;
 //       clickStart();
 //    }   
 // }
-
-
