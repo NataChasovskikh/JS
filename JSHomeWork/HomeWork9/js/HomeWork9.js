@@ -22,13 +22,10 @@ function format (mmsec){
 
    let msec = Math.floor((mmsec % 1000));
    if (msec.toString().length == 1) msec = msec + '0' + '0';
-   // console.log(msec);
    let sec = Math.floor((mmsec / 1000) % 60);
    if (sec.toString().length == 1) sec = '0' + sec;
-   // console.log(sec);
    let min = Math.floor((mmsec / 1000 / 60) % 60);
    if (min.toString().length == 1) min = '0' + min;
-   // console.log(min);
    let show = ` ${min} : ${sec}.${msec}`;
    p.textContent = show;
    return show;
@@ -41,16 +38,13 @@ const reset = function(timeId){
    clickReset();
 }
 
-// reset(startId);
-
 const startBtn = document.querySelector('.js-start');
 startBtn.addEventListener('click', pause);
-// debugger;
 let clickPause = () => startBtn.textContent = "pause";
-
 const laptBtn = document.querySelector('.js-take-lap');
 laptBtn.addEventListener('click', addUl);
-const addLi = document.querySelector('.js-laps')
+const addLi = document.querySelector('.js-laps');
+
 function addUl (){
    const li = document.createElement("li");
    console.log(li); 
@@ -59,15 +53,15 @@ function addUl (){
 }
 
 const resetBtn = document.querySelector('.js-reset');
+
 resetBtn.addEventListener('click', function(){
    reset(timeId);
 });
-// resetBtn.addEventListener('click',reset.bind())
+
 let clickStart = () => startBtn.textContent = "continiu";
 let clickReset = () => startBtn.textContent = "staRT";
-
-
 let isClick = false; 
+
 function pause(){
    if(isClick === false && startId){
       clearInterval(startId);
@@ -83,6 +77,7 @@ function pause(){
 
 const lapBtn = document.querySelector('.js-take-lap');
 lapBtn.addEventListener('click', pause);
+
 
 
 //====================================

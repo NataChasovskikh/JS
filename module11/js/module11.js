@@ -34,39 +34,39 @@
  * разметки иконки быть не должно.
 */
 
-const posts = [
-   {
-     title: "Phasellus volutpat metus",
-     text:
-       "Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Ut leo.",
-     favourite: true
-   },
-   {
-     title: "Nulla consequat massa",
-     text:
-       "Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-     favourite: false
-   },
-   {
-     title: "In enim justo",
-     text:
-       "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Suspendisse eu ligula. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus.",
-     favourite: true
-   },
-   {
-     title: "Vestibulum ante ipsum",
-     text:
-       "Vestibulum suscipit nulla quis orci. Praesent venenatis metus at tortor pulvinar varius. Nulla sit amet est. Suspendisse eu ligula sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien.",
-     favourite: false
-   }
- ];
+// const posts = [
+//    {
+//      title: "Phasellus volutpat metus",
+//      text:
+//        "Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Pellentesque egestas, neque sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci leo non est. Ut leo.",
+//      favourite: true
+//    },
+//    {
+//      title: "Nulla consequat massa",
+//      text:
+//        "Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+//      favourite: false
+//    },
+//    {
+//      title: "In enim justo",
+//      text:
+//        "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Suspendisse eu ligula. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus.",
+//      favourite: true
+//    },
+//    {
+//      title: "Vestibulum ante ipsum",
+//      text:
+//        "Vestibulum suscipit nulla quis orci. Praesent venenatis metus at tortor pulvinar varius. Nulla sit amet est. Suspendisse eu ligula sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien.",
+//      favourite: false
+//    }
+//  ];
 
-const container = document.querySelector('.posts');
-const box = document.querySelector('#postsItem').innerHTML.trim();
-const template = Handlebars.compile(box);
-const content = posts.reduce((acc, item) => acc + template(item), '');
-container.innerHTML = content;
-const star = document.querySelector('.fav-icon');
+// const container = document.querySelector('.posts');
+// const box = document.querySelector('#postsItem').innerHTML.trim();
+// const template = Handlebars.compile(box);
+// const content = posts.reduce((acc, item) => acc + template(item), '');
+// container.innerHTML = content;
+// const star = document.querySelector('.fav-icon');
 
 
 
@@ -105,11 +105,15 @@ const star = document.querySelector('.fav-icon');
   Результат проверки, объект, выводить в консоль.
 */
 
-// const firstname = document.getElementById("first_name");
-// const lastname = document.getElementById("last_name");
-// const submitBtn = document.getElementById("submit-btn");
+const firstname = document.getElementById("first_name");
+const lastname = document.getElementById("last_name");
+const submitBtn = document.getElementById("submit-btn");
 
-// submitBtn.addEventListener("click", validate);
 
-// function validate(evt) {}
+submitBtn.addEventListener("click", validate);
+
+function validate(evt) {}
+
+
+
 //=========================================

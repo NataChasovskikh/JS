@@ -23,7 +23,7 @@
 
  /* =========допки 2 модуль 11============ */
 
-.posts {
+/* .posts {
    display: flex;
    max-width: 1170px;
    margin-left: auto;
@@ -47,10 +47,10 @@
    width: 32px;
    height: 32px;
    background-image: url("https://image.flaticon.com/icons/svg/189/189670.svg");
- } 
+ }  */
  
  /* =========допки 3 модуль 11============ */
- /* body {
+ body {
    padding: 20px;
    font-family: Roboto, sans-serif;
  }
@@ -81,7 +81,7 @@
  
  .results .error {
    color: #f44336;
- } */
+ }
  /* ============================ */
  
  
