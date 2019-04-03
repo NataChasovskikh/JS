@@ -105,14 +105,14 @@
   Результат проверки, объект, выводить в консоль.
 */
 
-const firstname = document.getElementById("first_name");
-const lastname = document.getElementById("last_name");
-const submitBtn = document.getElementById("submit-btn");
+// const firstname = document.getElementById("first_name");
+// const lastname = document.getElementById("last_name");
+// const submitBtn = document.getElementById("submit-btn");
 
 
-submitBtn.addEventListener("click", validate);
+// submitBtn.addEventListener("click", validate);
 
-function validate(evt) {}
+// function validate(evt) {}
 
 
 

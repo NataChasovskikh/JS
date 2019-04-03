@@ -1,0 +1,17 @@
+{
+  "name": "HomeWork11",
+  "version": "1.0.0",
+  "description": "myGulp",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp start"
+  },
+  "keywords": [],
+  "author": "bootcamp10",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-rigger": "^0.5.8"
+  }
+}

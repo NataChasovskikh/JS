@@ -1,0 +1,17 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+.btn {
+   width: 100px;
+   height: 20px;
+}
+.mainContainer{
+   display: flex;
+   flex-direction: column;
+}
+.function-container{
+   margin-bottom: 20px;
+}
