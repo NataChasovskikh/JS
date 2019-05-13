@@ -10,8 +10,11 @@
 }
 .mainContainer{
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
 }
 .function-container{
    margin-bottom: 20px;
+}
+.result-item{
+   margin-left: 150px;
 }
